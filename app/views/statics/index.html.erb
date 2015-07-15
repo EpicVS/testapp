@@ -1,3 +1,136 @@
 <p id="notice"><%= notice %></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/codemirror.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/keymap/sublime.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/theme/monokai.min.css">
 
-<h1>mytestapp.herokuapp.com</h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/addon/search/searchcursor.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/addon/search/search.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/addon/dialog/dialog.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/addon/comment/comment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/addon/wrap/hardwrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/addon/fold/foldcode.min.js"></script>
+<script src=".https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/addon/fold/brace-fold.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/addon/fold/foldgutter.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/addon/dialog/dialog.min.css">
+
+<style>
+
+.intro {
+  color: rgb(255, 255, 255);
+    position: relative;
+    min-height: 350px;
+    height: 100%;
+    background: url("http://f.fwallpapers.com/images/python-programming.jpg") no-repeat scroll 0px 100% / cover transparent;
+  /*display: table;
+  width: 100%;
+    height: auto;   
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+  background: url(http://f.fwallpapers.com/images/python-programming.jpg) no-repeat bottom center scroll;
+  background-color: #000;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;*/
+}
+
+.intro .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.intro .intro-body .brand-heading {
+    font-size: 40px;
+}
+
+.intro .intro-body .intro-text {
+    font-size: 18px;
+}
+
+@media(min-width:768px) {
+    .intro {
+        height: 100%;
+        padding: 0;
+    }
+
+    .intro .intro-body .brand-heading {
+        font-size: 100px;
+    }
+
+    .intro .intro-body .intro-text {
+        font-size: 26px;
+    }
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    /*min-height: 100%;*/
+    background: url(/images/python-wallpaper_06.jpg) no-repeat bottom center ;
+    display: block;
+    padding:0;
+    /*background-position: 0 0;*/
+}
+
+html, body {
+    height: 100%;
+}
+
+.fill { 
+    min-height: 100%;
+    height: 100%;
+}
+</style>
+
+<!--
+<div class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading"></h1>
+                        <div class="codemirror">
+
+                        </div>
+                        <p class="intro-text"></p>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+-->
+
+<!-- <div class="container fill"> -->
+<div id="map">
+    <div class="col-md-8 col-md-offset-2">
+        <h1 class="brand-heading"></h1>
+        <div class="codemirror">
+
+        </div>
+        <p class="intro-text"></p>
+        
+
+    </div>
+</div>
+<!-- </div> -->
+
+<script>
+var myCodeMirror = CodeMirror(document.getElementsByClassName("codemirror")[0], {
+  value: "def hello_world():\n  print 'Hello, world!'\n",
+  mode: "python",
+  lineNumbers: true,
+  keyMap: "sublime",
+  autoCloseBrackets: true,
+  matchBrackets: true,
+  showCursorWhenSelecting: true,
+  theme: "monokai"
+});
+</script>
